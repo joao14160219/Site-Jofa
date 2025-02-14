@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site Minimalista</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+</head>
+<body>
+  <img class="logo" src="/imgs/LogoJofa-removebg-preview (1).png">
+
+  <div class="container">
+    <button class="botao">Regras do Jogo</button>
+
+    <a href="gerarcarta.html">
+      <button class="botao">Gere uma carta</button>
+    </a>
+
+    <a href="gerardados.html">
+      <button class="botao">JOQUE O DADO</button>
+    </a>
+
+    <a href="gerardados.html">
+      <button class="botao">Shots aleatórios</button>
+    </a>
+  </div>
+
+  <style>
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(/imgs/queijo.jpg);
+  }
+
+  .logo {
+    position: absolute;
+    top: 50px;
+    width: 430px;
+  }
+
+  .rostos {
+    position: absolute;
+    top: 40px;
+    width: 300px;
+    
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .botao {
+    padding: 15px 80px;
+    font-family: "Lacquer", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    
+  }
+  
+  .botao:hover {
+    background-color: #dd6f4e;
+  }
+  
+  @media (max-width: 400px) {
+    .botao {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  }
+
+  
+  </style>
+
+</body>
+</html>
