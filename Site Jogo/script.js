@@ -34,13 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
         "cartas jogo/29.jpeg"
     ];
 
-    if (gerarCartasBtn && cartaImagem) { // Verifica se os elementos existem
-        gerarCartasBtn.addEventListener('click', () => {
+    if (gerarCartasBtn && cartaImagem) {
+        // Função para exibir uma carta aleatória (mantida igual)
+        const exibirCartaAleatoria = () => {
             const indiceAleatorio = Math.floor(Math.random() * cartas.length);
             const cartaSelecionada = cartas[indiceAleatorio];
-
             cartaImagem.src = cartaSelecionada;
-        });
+        };
+
+        gerarCartasBtn.addEventListener('click', exibirCartaAleatoria);
+
+        // Exibir uma carta aleatória ao carregar a página
+        exibirCartaAleatoria();
     } else {
         console.error('Elementos gerarCartas ou cartaImagem não encontrados!');
     }
