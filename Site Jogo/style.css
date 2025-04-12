@@ -48,7 +48,7 @@ body {
     border: 1px double black;
     border-radius: 15px;
     cursor: pointer;
-    color: black;
+    color: rgb(236, 226, 226);
     font-family: "Lacquer", serif;
     font-weight: 400;
     background-image: linear-gradient(to right, #ff4081, #c644fc); /* Gradiente neon */
