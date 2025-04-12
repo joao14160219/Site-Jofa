@@ -4,9 +4,11 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    background-color: black;
     background-image: url(/imgs/regras.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain; /* Ajusta a imagem para caber na tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
 }
 
 .container {
