@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-image: url(/imgs/queijo.jpg);
+    background-image: url(/imgs/fogo_de_fundo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -20,7 +20,7 @@ body {
 
 .botao {
     padding: 15px 80px;
-    min-width: 350px;
+    min-width: 330px;
     font-family: "Lacquer", serif;
     font-weight: 400;
     font-style: normal;
@@ -36,7 +36,7 @@ body {
 
 
 .botao:hover {
-    background-color: #11259bd5;
+    background-color: #a53021d5;
 }
 
 #cartaContainer {
