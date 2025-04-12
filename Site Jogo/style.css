@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(/imgs/queijo.jpg);
+    background-image: url(/imgs/balada.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -13,7 +13,7 @@ body {
   .logo {
     position: absolute;
     top: 50px;
-    width: 430px;
+    width: 400px;
   }
   
   .container {
@@ -23,7 +23,7 @@ body {
     gap: 40px;
   }
   
-  .botao {
+  /*.botao {
     padding: 15px 80px;
     min-width: 350px;
     font-family: "Lacquer", serif;
@@ -39,9 +39,28 @@ body {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
     
   }
+    */
+
+    .botao {
+    padding: 18px 35px;
+    font-size: 1.3em;
+    min-width: 350px;
+    border: 1px double black;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    font-family: "Lacquer", serif;
+    font-weight: 400;
+    background-image: linear-gradient(to right, #ff4081, #c644fc); /* Gradiente neon */
+    box-shadow: 0 2px 8px rgba(255, 64, 129, 0.5);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
   
   .botao:hover {
-    background-color: #dd6f4e;
+    scale: 1.05;
+    background-color: #a53021d5;
   }
   
   @media (max-width: 400px) {
