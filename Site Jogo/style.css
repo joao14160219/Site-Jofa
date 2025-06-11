@@ -1,14 +1,16 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url(/imgs/balada.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+  font-family: sans-serif;
+  margin: 0;
+  min-height: 102vh;
+  display: flex; /* Adiciona flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: end; /* Centraliza verticalmente */
+  background-image: url(/imgs/uni.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 40px;
+}
 
   .logo {
     position: absolute;
@@ -42,17 +44,18 @@ body {
     */
 
     .botao {
-    padding: 18px 35px;
-    font-size: 1.3em;
+    margin-bottom: 50%;
+    font-size: 40px;
     min-width: 350px;
-    border: 1px double black;
-    border-radius: 15px;
+    border: 1px double rgb(255, 255, 255);
+    border-radius: 5px;
     cursor: pointer;
     color: rgb(236, 226, 226);
-    font-family: "Lacquer", serif;
+    font-family: "Poetsen One", sans-serif;
     font-weight: 400;
-    background-image: linear-gradient(to right, #ff4081, #c644fc); /* Gradiente neon */
-    box-shadow: 0 2px 8px rgba(255, 64, 129, 0.5);
+    background: #2237c3;
+    background: linear-gradient(0deg, rgba(34, 55, 195, 1) 35%, rgba(173, 173, 247, 1) 100%);
+    box-shadow: 0 2px 8px rgba(182, 177, 179, 0.5);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 1px;

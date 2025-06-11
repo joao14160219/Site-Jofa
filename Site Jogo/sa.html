@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site Minimalista</title>
-    <link rel="stylesheet" href="gerarcarta.css">
+    <link rel="stylesheet" href="sa.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
@@ -16,16 +16,20 @@
     <div class="container">
         <a href="tela_menus.html">
             <button class="botao">VOLTAR AO MENU</button>
-          </a>
-        <button id="gerarcartas" class="botao">GERAR UMA CARTA</button>
+        </a>
+        <button id="shotsAleatorios" class="botao">SHOTS ALEATÓRIOS</button>
 
-        <div id="cartaContainer">
-            <img id="cartaImagem" src="" alt="Carta">
-        </div>
-    </div>
+        <div id="numeroAleatorio"></div> </div>
+        
 
-    <script src="script.js"></script> </body>
+    <script>
+    const shotsBtn = document.getElementById('shotsAleatorios');
+    const numeroDiv = document.getElementById('numeroAleatorio');
+
+    shotsBtn.addEventListener('click', () => {
+        const numero = Math.floor(Math.random() * 11); 
+        numeroDiv.textContent = numero;
+    });
+</script>
+</body>
 </html>
-
-
-

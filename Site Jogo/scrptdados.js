@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartaImagem = document.getElementById('cartaImagem');
     const cartaImagem2 = document.getElementById('cartaImagem2');
     const numeroAleatorioDiv = document.getElementById('numeroAleatorio');
+    const jogadorAtualDiv = document.getElementById('jogadorAtual');
 
     const cartas = [
         "dados/dado_1-removebg-preview.png",
@@ -14,8 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
         "dados/dado_6-removebg-preview.png",
     ];
 
-    if (gerarCartasBtn && cartaImagem && cartaImagem2 && shotsAleatoriosBtn && numeroAleatorioDiv) {
-        // Função para gerar dados (mantida igual)
+    // Mapeamento das imagens para os valores dos dados
+    const valoresCartas = {
+        "dados/dado_1-removebg-preview.png": 1,
+        "dados/dado_2-removebg-preview.png": 2,
+        "dados/dado_3-removebg-preview.png": 3,
+        "dados/dado_4-removebg-preview.png": 4,
+        "dados/dado_5-removebg-preview.png": 5,
+        "dados/dado_6-removebg-preview.png": 6,
+    };
+
+    // Recuperar jogadores e posições do localStorage
+    const jogadores = JSON.parse(localStorage.getItem('jogadores')) || [];
+    const posicoes = JSON.parse(localStorage.getItem('posicoes')) || Array(jogadores.length).fill(0);
+    let jogadorIndex = 0;
+
+    if (gerarCartasBtn && cartaImagem && cartaImagem2 && numeroAleatorioDiv && jogadorAtualDiv) {
+        // Função para gerar dados
         const gerarDados = () => {
             let indiceAleatorio1 = Math.floor(Math.random() * cartas.length);
             let indiceAleatorio2;
@@ -28,19 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
             cartaImagem.style.display = "block";
             cartaImagem2.style.display = "block";
             numeroAleatorioDiv.textContent = "";
+
+            // Atualizar a posição do jogador atual
+            if (jogadores.length > 0) {
+                const valorDado1 = valoresCartas[cartas[indiceAleatorio1]];
+                const valorDado2 = valoresCartas[cartas[indiceAleatorio2]];
+                const somaDados = valorDado1 + valorDado2;
+
+                posicoes[jogadorIndex] += somaDados; // Atualiza a posição do jogador atual
+                localStorage.setItem('posicoes', JSON.stringify(posicoes)); // Salva as posições no localStorage
+
+                jogadorAtualDiv.textContent = `Jogador atual: ${jogadores[jogadorIndex]} (Casa: ${posicoes[jogadorIndex]})`;
+                jogadorIndex = (jogadorIndex + 1) % jogadores.length; // Alterna para o próximo jogador
+            }
         };
 
         gerarCartasBtn.addEventListener('click', gerarDados);
-
-        shotsAleatoriosBtn.addEventListener('click', () => {
-            cartaImagem.src = "";
-            cartaImagem2.src = "";
-            cartaImagem.style.display = "none";
-            cartaImagem2.style.display = "none";
-
-            const numeroAleatorio = Math.floor(Math.random() * 16);
-            numeroAleatorioDiv.textContent = numeroAleatorio;
-        });
 
         // Chamar a função gerarDados() ao carregar a página
         gerarDados(); 
